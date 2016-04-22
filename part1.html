@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Color Guessing Game</title>
+		<meta name="author" content="Snehal Patel">
+	</head>
+	<body onload="do_game()">
+	<script>
+		var colors = ["orange", "yellow", "blue", "red", "green", "purple", "pink", "brown", "coral", "gray", "black", "gold", "lightblue" , "peachpuff", "tan"];
+		colors.sort();
+		var selectedColor;
+		var input;
+		var finished = false;
+		function do_game() {	
+			var randomNumber = Math.floor(Math.random() * colors.length);
+			selectedColor = colors[randomNumber];
+			alert("The randomly selected color is: " + selectedColor);	
+			
+			while (!finished) {
+				input = prompt("I am thinking of one of these colors:\n\n" + colors.join(", ") + "\n\nWhat color am I thinking of?");
+				if (input.trim().toLowerCase() == selectedColor) {
+					finished = true;
+				}
+			}
+		}
+		</script>	
+	</body>
+</html>
